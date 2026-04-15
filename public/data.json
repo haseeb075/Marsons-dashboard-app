@@ -1,0 +1,11 @@
+{
+  "user": { "name": "Haseeb", "points": 120 },
+  "projects": [
+    { "id": 1, "title": "Test 1", "description": "Desc 1" },
+    { "id": 2, "title": "Test 2", "description": "Desc 2" }
+  ],
+  "leaderboard": [
+    { "name": "Ali", "score": 200 },
+    { "name": "Ahmed", "score": 150 }
+  ]
+}
