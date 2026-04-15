@@ -37,8 +37,8 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="w-64 h-full min-h-0 bg-blue-700 text-white flex flex-col p-4 rounded-r-3xl">
-      <div className="flex-1 min-h-0 overflow-y-auto">
+    <div className="w-64 max-h-full bg-blue-700 text-white flex flex-col p-4 rounded-r-3xl">
+      <div className="flex-1  overflow-y-auto">
         {/* Menu */}
         <ul className="space-y-3">
           {menu.map((item) => {
@@ -70,11 +70,6 @@ export default function Sidebar() {
             );
           })}
         </ul>
-      </div>
-      <div className="w-full mt-4 shrink-0">
-        <button className="bg-white text-red-500 py-2 rounded-xl w-full">
-          Logout
-        </button>
       </div>
     </div>
   );
