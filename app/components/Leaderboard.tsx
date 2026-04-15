@@ -1,12 +1,9 @@
 "use client";
 
+import { useStore } from "../store/useStore";
+
 export default function Leaderboard() {
-  const users = [
-    { name: "Giulia Verdini", score: 2980, isWinner: true },
-    { name: "Luca Bianchi", score: 2760, isWinner: false },
-    { name: "Sara Conti", score: 2540, isWinner: false },
-    { name: "Marco Rinaldi", score: 2310, isWinner: false },
-  ];
+  const users = useStore((state) => state.leaderboard);
 
   return (
     <div className="bg-blue-900 text-white p-4 rounded-2xl h-full mr-8">
@@ -32,7 +29,7 @@ export default function Leaderboard() {
                       ♛
                     </div>
                   </div>
-                  {user.isWinner && (
+                  {i === 0 && (
                     <div className="absolute -bottom-1 -left-1 -right-1 bg-red-500 text-white text-[5px] font-black py-0.5 rounded text-center uppercase">
                       Winner
                     </div>
@@ -57,6 +54,12 @@ export default function Leaderboard() {
             </span>
           </div>
         ))}
+
+        {users.length === 0 && (
+          <div className="bg-white rounded-[18px] py-3 px-6 shadow-md text-gray-600">
+            No leaderboard data available yet.
+          </div>
+        )}
       </div>
     </div>
   );

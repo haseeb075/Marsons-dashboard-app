@@ -7,5 +7,6 @@
   "leaderboard": [
     { "name": "Ali", "score": 200 },
     { "name": "Ahmed", "score": 150 }
-  ]
+  ],
+  "notes": []
 }

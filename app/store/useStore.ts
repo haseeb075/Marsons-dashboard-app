@@ -1,14 +1,15 @@
 import { create } from "zustand";
+import type { LeaderboardEntry, Project, User } from "../lib/api";
 
 interface Store {
-  user: any;
-  projects: any[];
-  leaderboard: any[];
-  selectedProject: any;
-  setUser: (user: any) => void;
-  setProjects: (projects: any[]) => void;
-  setLeaderboard: (data: any[]) => void;
-  setSelectedProject: (project: any) => void;
+  user: User | null;
+  projects: Project[];
+  leaderboard: LeaderboardEntry[];
+  selectedProject: Project | null;
+  setUser: (user: User) => void;
+  setProjects: (projects: Project[]) => void;
+  setLeaderboard: (data: LeaderboardEntry[]) => void;
+  setSelectedProject: (project: Project | null) => void;
 }
 
 export const useStore = create<Store>((set) => ({

@@ -77,17 +77,26 @@ API helper is intentionally simple and located in:
 
 - `app/lib/api.ts`
 
-Current implementation:
+Current implementation uses route handlers backed by `public/data.json`:
 
-- `fetchData()` performs a client-side fetch from `/data.json`.
-- It returns parsed JSON used to populate Zustand state.
+- `GET /user`
+- `GET /projects`
+- `GET /leaderboard`
+- `GET /notes`
+- `POST /notes`
 
-```ts
-export const fetchData = async () => {
-  const res = await fetch("/data.json");
-  return res.json();
-};
-```
+Client integration is defined in `app/lib/api.ts` with dedicated functions:
+
+- `fetchUser()`
+- `fetchProjects()`
+- `fetchLeaderboard()`
+- `createNote({ text })`
+
+The dashboard page includes:
+
+- Loading state (`Loading dashboard data...`)
+- Error handling banners for fetch/save failures
+- Success feedback for successful dashboard load and note creation
 
 ## Notes
 
